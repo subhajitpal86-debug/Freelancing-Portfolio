@@ -6,7 +6,6 @@ import {
   Workflow,
   BookOpen,
   CheckCircle2,
-  ArrowRight,
   Sun,
   Moon,
   Menu,
@@ -532,7 +531,7 @@ export function App() {
           </div>
         </section>
 
-        {/* 8. TOOLS I WORK WITH */}
+        {/* 8. TECHNOLOGIES EXPLORED */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
