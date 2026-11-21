@@ -566,7 +566,7 @@ export function App() {
                   <div className="h-44 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 flex flex-col justify-between relative">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-400 border border-teal-500/20">
-                        Concept Demonstration
+                        Personal Concept Demo
                       </span>
                       <span className="text-[11px] text-slate-400 flex items-center gap-1">
                         <Play className="w-3 h-3" /> Illustrative UI • Synthetic sample data
