@@ -409,7 +409,7 @@ export function App() {
                 This portfolio presents selected areas of interest and illustrative concepts for individuals, professionals and organizations. It does not imply an established freelance practice or unrestricted availability.
               </p>
               <p>
-                The approach draws on more than 16 years of overall software experience. AI development is a newer area of focus; the examples shown are personal concept demonstrations, not client delivery claims.
+                The approach draws on more than 16 years of overall software experience. AI development is a newer area of focus; the examples shown are illustrative solution scenarios, not client delivery claims.
               </p>
               <p className="text-sm text-slate-500 dark:text-slate-400 border-l-2 border-teal-500 pl-4">
                 “Clear expectations matter: a concept is labelled as a concept, and any future engagement is discussed only when scope, availability and applicable commitments allow.”
