@@ -16,11 +16,9 @@ import {
   ShieldCheck,
   Clock,
   Code2,
-  Play,
   ChevronDown,
   Mail,
   MapPin,
-  Terminal,
   ExternalLink,
 } from 'lucide-react';
 
@@ -37,17 +35,9 @@ interface ServiceItem {
 
 interface ProjectItem {
   title: string;
-  problem: string;
-  solution: string;
-  howItWorks: string;
-  tools: string[];
-  mockupType: 'invoice' | 'chatbot' | 'monitor';
-}
-
-interface DemoQA {
-  id: string;
-  question: string;
-  answer: string;
+  situation: string;
+  approach: string;
+  outcome: string;
 }
 
 const SERVICES: ServiceItem[] = [
@@ -55,7 +45,7 @@ const SERVICES: ServiceItem[] = [
     title: 'Custom AI Chatbot',
     forWho: 'Individuals, professionals, and small businesses',
     deliverable:
-      'A website or messaging assistant trained on your FAQs, services, and policies that answers customer questions 24/7 and captures qualified leads.',
+      'A website or messaging assistant configured around approved FAQs, services, and policies. Optional enquiry routing can be scoped where appropriate.',
     delivery: 'Timeline confirmed after scope review',
     price: '$250 / ₹20,500 starting',
     icon: <Bot className="w-5 h-5" />,
@@ -64,7 +54,7 @@ const SERVICES: ServiceItem[] = [
     title: 'Document Processing Automation',
     forWho: 'Individuals and teams handling repetitive document work',
     deliverable:
-      'Automated extraction from invoices, forms, resumes, or contracts straight into clean Google Sheets rows, Excel, or your CRM.',
+      'A workflow concept for extracting selected fields from invoices, forms, resumes, or contracts and preparing structured records for review and export.',
     delivery: 'Timeline confirmed after scope review',
     price: '$200 / ₹16,500 starting',
     icon: <FileText className="w-5 h-5" />,
@@ -73,7 +63,7 @@ const SERVICES: ServiceItem[] = [
     title: 'AI Agent Development',
     forWho: 'Individuals, founders, and teams exploring task automation',
     deliverable:
-      'Autonomous agents that use tools, APIs, and Playwright browser automation to gather data, verify records, and complete workflows end-to-end.',
+      'Task-focused agents can be scoped to gather information, apply defined checks, and assist with repeatable browser or API-based workflows, with human review where needed.',
     delivery: 'Timeline confirmed after scope review',
     price: '$400 / ₹33,000 starting',
     icon: <Cpu className="w-5 h-5" />,
@@ -136,64 +126,31 @@ const PROCESS_STEPS = [
 
 const PROJECTS: ProjectItem[] = [
   {
-    title: 'Invoice Data Extractor',
-    problem:
-      'Manually typing vendor names, invoice numbers, dates, line items, and tax totals from PDF invoices into spreadsheets takes hours and introduces typos.',
-    solution:
-      'An illustrative concept showing how invoice information could be extracted and organized into structured records.',
-    howItWorks:
-      'Proposed workflow: upload a sample invoice, extract selected fields, review the output, and export validated data. This is a concept illustration, not a claim of a completed production system.',
-    tools: ['Python', 'Free-tier LLM API', 'Google Sheets'],
-    mockupType: 'invoice',
+    title: 'Invoice Data Extraction',
+    situation:
+      'A small team receives invoices as PDFs and manually copies supplier names, invoice dates, reference numbers, and totals into a spreadsheet.',
+    approach:
+      'A proposed workflow would read uploaded documents, extract agreed fields, flag uncertain values for human checking, and prepare a structured spreadsheet export.',
+    outcome:
+      'Less repetitive typing and a more consistent review process. Accuracy would need to be tested against the customer’s real document samples before use.',
   },
   {
-    title: 'Small-Business Support Assistant',
-    problem:
-      'Customers repeatedly call or message asking about hours, pricing, booking policies, and service areas, pulling staff away from billable work.',
-    solution:
-      'An illustrative concept for a small-business support assistant that could answer common questions from approved business information.',
-    howItWorks:
-      'Proposed workflow: prepare an approved FAQ source, retrieve relevant information for a visitor question, and present a suggested response. This is a concept illustration, not a claim of a deployed client chatbot.',
-    tools: ['Retrieval Pipeline (RAG)', 'Chroma Vector DB', 'Free-tier LLM'],
-    mockupType: 'chatbot',
+    title: 'Small-Business FAQ Assistant',
+    situation:
+      'Customers repeatedly ask a business the same questions about services, opening hours, pricing, and policies.',
+    approach:
+      'A proposed assistant would use business-approved FAQ content to find relevant answers, show the source information, and direct visitors to the business when a question needs a person.',
+    outcome:
+      'A clearer first response to common questions. The assistant would need approved content, testing, and an agreed human hand-off before launch.',
   },
   {
-    title: 'Competitor Price Monitor Agent',
-    problem:
-      'Checking competitor product pages every week by hand to track price changes and stock updates is tedious and easy to forget.',
-    solution:
-      'An illustrative concept for tracking publicly visible product prices and highlighting changes over time.',
-    howItWorks:
-      'Proposed workflow: collect sample product-page data, normalize price fields, compare snapshots, and prepare a change summary. This is a concept illustration, not a claim of a live monitoring service.',
-    tools: ['Python', 'Playwright', 'Free-tier LLM', 'n8n'],
-    mockupType: 'monitor',
-  },
-];
-
-const DEMO_CONVERSATIONS: DemoQA[] = [
-  {
-    id: 'hours',
-    question: 'What are your clinic hours and do you take walk-ins?',
-    answer:
-      'We are open Monday–Saturday from 9:00 AM to 7:00 PM (closed Sundays). Same-day walk-ins are welcome before 5:30 PM, or I can reserve a priority slot for you right now—would you like to leave your name and phone number?',
-  },
-  {
-    id: 'pricing',
-    question: 'How much does a standard consultation cost?',
-    answer:
-      'An initial 30-minute consultation is $60, which is credited toward any treatment plan booked within 14 days. Follow-up visits are $35. Let me know if you would like our team to text you the full fee schedule.',
-  },
-  {
-    id: 'reschedule',
-    question: 'Can I reschedule my appointment for tomorrow?',
-    answer:
-      'Yes—appointments can be rescheduled at no charge up to 12 hours before your visit. Please share your booking email or phone number, and our front desk will confirm your new time slot within 15 minutes.',
-  },
-  {
-    id: 'human',
-    question: 'Can I speak directly with someone on your team?',
-    answer:
-      'Of course. I have flagged this chat for our coordinator. Leave your email or phone number below and someone from our team will reach out shortly.',
+    title: 'Competitor Price Tracking',
+    situation:
+      'A business checks selected public product pages manually to notice changes in prices or availability.',
+    approach:
+      'A proposed scheduled workflow would collect permitted public page information, compare it with a previous snapshot, and prepare a change report for review.',
+    outcome:
+      'A repeatable way to review changes without implying guaranteed coverage. Feasibility depends on each website’s terms, structure, and access restrictions.',
   },
 ];
 
@@ -233,11 +190,6 @@ export function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Interactive scripted demo state
-  const [selectedDemo, setSelectedDemo] = useState<DemoQA>(DEMO_CONVERSATIONS[0]);
-  const [displayedAnswer, setDisplayedAnswer] = useState<string>(DEMO_CONVERSATIONS[0].answer);
-  const [isTyping, setIsTyping] = useState(false);
-
   // Contact form state (opens pre-filled mailto link)
   const [contactName, setContactName] = useState('');
   const [contactEmail, setContactEmail] = useState('');
@@ -252,23 +204,6 @@ export function App() {
       root.classList.remove('dark');
     }
   }, [darkMode]);
-
-  const handleSelectDemoQuestion = (item: DemoQA) => {
-    setSelectedDemo(item);
-    setIsTyping(true);
-    setDisplayedAnswer('');
-
-    let index = 0;
-    const interval = setInterval(() => {
-      index += 3;
-      setDisplayedAnswer(item.answer.slice(0, index));
-      if (index >= item.answer.length) {
-        setDisplayedAnswer(item.answer);
-        setIsTyping(false);
-        clearInterval(interval);
-      }
-    }, 15);
-  };
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -421,7 +356,7 @@ export function App() {
             </div>
 
             <p className="mt-6 text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
-              Kolkata, India &nbsp;|&nbsp; Remote enquiries &nbsp;|&nbsp; Scope and availability confirmed before commitment
+              Kolkata, India &nbsp;|&nbsp; Remote enquiries &nbsp;|&nbsp; Appointments: Saturday &amp; Sunday, 9:00 AM–7:00 PM IST
             </p>
           </div>
         </section>
@@ -432,7 +367,7 @@ export function App() {
             <div className="flex items-start sm:items-center gap-3">
               <Sparkles className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5 sm:mt-0" />
               <p className="text-sm sm:text-base font-medium text-slate-800 dark:text-slate-100">
-                Independent project enquiries are welcome. Any potential engagement is subject to applicable professional commitments, permissions, availability and a separately agreed scope.
+                Introductory appointments are available on Saturdays and Sundays, 9:00 AM–7:00 PM IST. Any project engagement remains subject to scope, permissions and availability.
               </p>
             </div>
             <a
@@ -516,7 +451,7 @@ export function App() {
           </div>
 
           <p className="mt-8 text-sm text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-lg px-4 py-3">
-            Final price depends on scope. Every project starts with a free discovery call and a fixed-price proposal.
+            Prices are indicative starting points, not quotations. A discussion is exploratory; any work, fee, timeline and handover terms must be agreed in writing before it begins.
           </p>
         </section>
 
@@ -527,7 +462,7 @@ export function App() {
               How I Work
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              A straightforward four-step process with zero guesswork.
+              A clear sequence for assessing a request before any work is agreed.
             </p>
           </div>
 
@@ -555,194 +490,45 @@ export function App() {
         <section id="work" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              Selected Work
+              Concept Examples
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              Self-directed concept demonstrations created to explore possible solutions. These are not client projects or claims of production-ready implementations.
+              These are illustrative scenarios, not completed client projects or deployed products. They show the type of problem a proposed solution could address.
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {PROJECTS.map((project) => (
               <article
                 key={project.title}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 overflow-hidden"
+                className="flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6"
               >
-                <div>
-                  {/* PLACEHOLDER FRAME: Replace the UI diagram below with a real screenshot or demo video */}
-                  <div className="h-44 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 flex flex-col justify-between relative">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-400 border border-teal-500/20">
-                        Personal Concept Demo
-                      </span>
-                      <span className="text-[11px] text-slate-400 flex items-center gap-1">
-                        <Play className="w-3 h-3" /> Illustrative UI • Synthetic sample data
-                      </span>
-                    </div>
-
-                    {/* Clean UI Architecture Mockup */}
-                    {project.mockupType === 'invoice' && (
-                      <div className="my-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 text-xs font-mono">
-                        <div className="flex items-center justify-between text-slate-400 pb-1.5 border-b border-slate-100 dark:border-slate-800">
-                          <span>invoice_042.pdf</span>
-                          <span className="text-teal-500">→ Google Sheets</span>
-                        </div>
-                        <div className="mt-2 grid grid-cols-3 gap-2 text-[11px]">
-                          <div className="bg-slate-50 dark:bg-slate-800/70 p-1.5 rounded">Vendor: Acme</div>
-                          <div className="bg-slate-50 dark:bg-slate-800/70 p-1.5 rounded">Date: Nov 18</div>
-                          <div className="bg-teal-500/10 text-teal-600 dark:text-teal-300 p-1.5 rounded">Total: $420</div>
-                        </div>
-                      </div>
-                    )}
-
-                    {project.mockupType === 'chatbot' && (
-                      <div className="my-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 text-xs space-y-1.5">
-                        <div className="bg-slate-100 dark:bg-slate-800 rounded px-2.5 py-1 w-fit text-slate-600 dark:text-slate-300">
-                          Do you offer weekend slots?
-                        </div>
-                        <div className="bg-teal-500/15 text-teal-800 dark:text-teal-200 rounded px-2.5 py-1 ml-auto w-fit">
-                          Yes, Saturdays 9 AM – 5 PM.
-                        </div>
-                      </div>
-                    )}
-
-                    {project.mockupType === 'monitor' && (
-                      <div className="my-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 text-xs font-mono">
-                        <div className="flex items-center justify-between text-[11px] text-slate-400">
-                          <span>Playwright Crawl</span>
-                          <span className="text-teal-500">Weekly Digest</span>
-                        </div>
-                        <div className="mt-2 flex items-center justify-between bg-slate-50 dark:bg-slate-800/70 px-2.5 py-1.5 rounded text-[11px]">
-                          <span>Plan Tier A</span>
-                          <span className="text-amber-500">$49 → $39 (-20%)</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-300">
-                      <strong className="text-slate-800 dark:text-slate-100">Problem:</strong> {project.problem}
-                    </p>
-                    <p className="text-sm text-slate-600 dark:text-slate-300">
-                      <strong className="text-slate-800 dark:text-slate-100">Concept:</strong> {project.solution}
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                      <strong className="text-slate-700 dark:text-slate-300">Illustrative workflow:</strong> {project.howItWorks}
-                    </p>
-                  </div>
+                <div className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700 dark:text-teal-400">
+                  <CheckCircle2 className="w-4 h-4" />
+                  Concept scenario
                 </div>
-
-                <div className="px-6 pb-6 pt-2">
-                  <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Illustrative technology options (not a claim of implementation)</p>
-                  <div className="flex flex-wrap gap-2">
-                  {project.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                  </div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                  {project.title}
+                </h3>
+                <div className="mt-5 space-y-4 text-sm leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-300">
+                    <strong className="text-slate-900 dark:text-slate-100">Situation</strong>
+                    <span className="block mt-1">{project.situation}</span>
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    <strong className="text-slate-900 dark:text-slate-100">Proposed approach</strong>
+                    <span className="block mt-1">{project.approach}</span>
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    <strong className="text-slate-900 dark:text-slate-100">Potential value</strong>
+                    <span className="block mt-1">{project.outcome}</span>
+                  </p>
                 </div>
+                <p className="mt-auto pt-5 text-xs text-slate-500 dark:text-slate-400">
+                  Concept only • No client deployment or working product is being claimed
+                </p>
               </article>
             ))}
-          </div>
-        </section>
-
-        {/* 7. LIVE INTERACTIVE DEMO (FRONT-END SCRIPTED) */}
-        <section aria-labelledby="demo-heading" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-500/10 text-teal-700 dark:text-teal-400 border border-teal-500/20 mb-3">
-                Interactive demo
-              </span>
-              <h2 id="demo-heading" className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-                Try a Sample Business Support Bot
-              </h2>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">
-                Choose a sample question to preview a scripted response. This interface is illustrative only; it is not connected to an AI model, business knowledge base or lead-capture system.
-              </p>
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Fictional sample business • Scripted preview • No AI API or lead capture
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-6">
-            {/* Suggested Questions */}
-            <div className="lg:col-span-5 space-y-2.5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
-                Select a sample visitor question:
-              </p>
-              {DEMO_CONVERSATIONS.map((item) => {
-                const active = selectedDemo.id === item.id;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => handleSelectDemoQuestion(item)}
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium border transition-all ${
-                      active
-                        ? 'border-teal-500 bg-teal-500/10 text-teal-800 dark:text-teal-200'
-                        : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300'
-                    }`}
-                  >
-                    {item.question}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Chat Window */}
-            <div className="lg:col-span-7 flex flex-col justify-between rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-5 min-h-[260px]">
-              <div>
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
-                    <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-                      Client Assistant (Sample Knowledge Base)
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
-                    Interactive demo
-                  </span>
-                </div>
-
-                <div className="space-y-4">
-                  {/* Visitor Message */}
-                  <div className="flex justify-end">
-                    <div className="max-w-[85%] rounded-2xl rounded-tr-sm bg-teal-600 dark:bg-teal-500 text-white dark:text-slate-950 px-4 py-2.5 text-sm font-medium">
-                      {selectedDemo.question}
-                    </div>
-                  </div>
-
-                  {/* Bot Reply */}
-                  <div className="flex justify-start">
-                    <div className="max-w-[90%] rounded-2xl rounded-tl-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                      {displayedAnswer}
-                      {isTyping && (
-                        <span className="inline-block w-1.5 h-4 ml-1 bg-teal-500 animate-pulse align-middle" />
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                <span>Scripted sample response • No lead data collected</span>
-                <a
-                  href="#contact"
-                  className="font-semibold text-teal-600 dark:text-teal-400 hover:underline"
-                >
-                  Want this on your site? →
-                </a>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -842,7 +628,7 @@ export function App() {
                 Have a repetitive process eating your team’s time? Let’s automate it.
               </h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                Choose a convenient slot using the appointment calendar, or use the email enquiry form if you prefer to share project details first. A booking is an initial discussion and does not confirm acceptance of work; any potential engagement remains subject to applicable commitments and agreed terms.
+                Appointment slots are available on Saturdays and Sundays, 9:00 AM–7:00 PM India Standard Time. Use the calendar to choose a slot, or send an email enquiry first. A meeting is an initial discussion, not confirmation that a project will be accepted.
               </p>
               <a
                 href={BOOKING_URL}
@@ -857,15 +643,15 @@ export function App() {
               <div className="pt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
                 <p className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  No obligation • Fixed-price written quote after our call
+                  Introductory discussion • No obligation to proceed
                 </p>
                 <p className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  Typical turnaround: 1–2 weeks
+                  Delivery timing is agreed only after scope and feasibility review
                 </p>
                 <p className="flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                  100% code &amp; workflow ownership handed over to you
+                  Handover, access and ownership terms are documented in the project agreement
                 </p>
               </div>
             </div>
