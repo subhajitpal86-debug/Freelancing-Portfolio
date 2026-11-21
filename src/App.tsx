@@ -80,7 +80,7 @@ const SERVICES: ServiceItem[] = [
     title: 'Website & Web Application Concepts',
     forWho: 'Individuals, students, professionals, startups, and businesses',
     deliverable:
-      'Responsive portfolio sites, landing pages, business websites, and focused web application concepts, scoped around the intended audience and functionality.',
+      'A one-page responsive website or a small business website of up to five informational pages. Page content, contact links, forms, revisions and any additional functionality are agreed in the project scope.',
     delivery: 'Timeline confirmed after scope review',
     price: '₹3,999 / $49 (one page) • ₹7,999 / $99 (up to 5 pages)',
     icon: <Code2 className="w-5 h-5" />,
