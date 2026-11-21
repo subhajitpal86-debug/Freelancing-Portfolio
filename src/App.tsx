@@ -24,11 +24,6 @@ import {
   ExternalLink,
 } from 'lucide-react';
 
-// ============================================================================
-// PLACEHOLDER: Replace with your actual Google Calendar appointment booking URL
-// ============================================================================
-const BOOKING_URL = 'https://calendar.app.google/SvUD2YihdMirAzrY7';
-
 interface ServiceItem {
   title: string;
   forWho: string;
@@ -56,47 +51,47 @@ interface DemoQA {
 const SERVICES: ServiceItem[] = [
   {
     title: 'Custom AI Chatbot',
-    forWho: 'Service businesses, clinics, agencies, and e-commerce stores',
+    forWho: 'Individuals, professionals, and small businesses',
     deliverable:
       'A website or messaging assistant trained on your FAQs, services, and policies that answers customer questions 24/7 and captures qualified leads.',
-    delivery: 'Typical delivery: 1-2 weeks',
-    price: 'Starting at $250',
+    delivery: 'Timeline confirmed after scope review',
+    price: '$250 / ₹20,500 starting',
     icon: <Bot className="w-5 h-5" />,
   },
   {
     title: 'Document Processing Automation',
-    forWho: 'Operations, accounting, HR, and legal teams drowning in PDFs',
+    forWho: 'Individuals and teams handling repetitive document work',
     deliverable:
       'Automated extraction from invoices, forms, resumes, or contracts straight into clean Google Sheets rows, Excel, or your CRM.',
-    delivery: 'Typical delivery: 1-2 weeks',
-    price: 'Starting at $200',
+    delivery: 'Timeline confirmed after scope review',
+    price: '$200 / ₹16,500 starting',
     icon: <FileText className="w-5 h-5" />,
   },
   {
     title: 'AI Agent Development',
-    forWho: 'Founders and teams with multi-step research or ops tasks',
+    forWho: 'Individuals, founders, and teams exploring task automation',
     deliverable:
       'Autonomous agents that use tools, APIs, and Playwright browser automation to gather data, verify records, and complete workflows end-to-end.',
-    delivery: 'Typical delivery: 1-2 weeks',
-    price: 'Starting at $400',
+    delivery: 'Timeline confirmed after scope review',
+    price: '$400 / ₹33,000 starting',
     icon: <Cpu className="w-5 h-5" />,
   },
   {
     title: 'Workflow Automation',
-    forWho: 'Small teams manually copying data between daily apps',
+    forWho: 'Individuals and small teams handling repetitive digital tasks',
     deliverable:
       'Connect email, Google Sheets, CRM, and Slack with an AI decision layer in the middle to classify, draft, route, and update records automatically.',
-    delivery: 'Typical delivery: 1-2 weeks',
-    price: 'Starting at $150',
+    delivery: 'Timeline confirmed after scope review',
+    price: '$150 / ₹12,500 starting',
     icon: <Workflow className="w-5 h-5" />,
   },
   {
     title: 'Chat With Your Docs (Knowledge Base)',
-    forWho: 'Growing teams onboarding staff or supporting customers',
+    forWho: 'Individuals and organizations managing reference documents',
     deliverable:
       'A private search-and-answer assistant over your SOPs, manuals, and internal docs with source citations so answers stay grounded in your data.',
-    delivery: 'Typical delivery: 1-2 weeks',
-    price: 'Starting at $300',
+    delivery: 'Timeline confirmed after scope review',
+    price: '$300 / ₹25,000 starting',
     icon: <BookOpen className="w-5 h-5" />,
   },
 ];
@@ -104,27 +99,27 @@ const SERVICES: ServiceItem[] = [
 const PROCESS_STEPS = [
   {
     step: '01',
-    title: 'Discovery Call',
+    title: 'Initial Enquiry',
     description:
-      'A free 20-minute call to walk through your current workflow, bottlenecks, and what success looks like.',
+      'Share the problem or idea. An initial discussion can establish whether the requirement and timing are a suitable fit.',
   },
   {
     step: '02',
-    title: 'Fixed-Scope Proposal',
+    title: 'Scope & Feasibility',
     description:
-      'You receive a clear written scope, exact deliverables, timeline, and fixed price before any work begins.',
+      'If an engagement can proceed, the scope, deliverables, dependencies, timeline and price are documented before any commitment.',
   },
   {
     step: '03',
-    title: 'Build With Progress Demos',
+    title: 'Develop & Review',
     description:
-      'I build iteratively and share working checkpoints so you can test early and give feedback along the way.',
+      'For an accepted engagement, agreed checkpoints are used to review progress and validate the requested functionality.',
   },
   {
     step: '04',
-    title: 'Launch & Handover',
+    title: 'Handover',
     description:
-      'Full deployment, plain-English documentation, a walkthrough video, and complete ownership of your code.',
+      'Handover materials, documentation, deployment responsibilities and ownership terms are defined in the project agreement.',
   },
 ];
 
@@ -134,20 +129,20 @@ const PROJECTS: ProjectItem[] = [
     problem:
       'Manually typing vendor names, invoice numbers, dates, line items, and tax totals from PDF invoices into spreadsheets takes hours and introduces typos.',
     solution:
-      'An automated pipeline that watches a folder or inbox, parses incoming PDF invoices, validates extracted fields, and appends structured rows to Google Sheets.',
+      'An illustrative concept showing how invoice information could be extracted and organized into structured records.',
     howItWorks:
-      'Python extracts text/layout from PDFs, sends structured extraction prompts to a free-tier LLM with schema validation, and writes verified rows via the Google Sheets API.',
+      'Proposed workflow: upload a sample invoice, extract selected fields, review the output, and export validated data. This is a concept illustration, not a claim of a completed production system.',
     tools: ['Python', 'Free-tier LLM API', 'Google Sheets'],
     mockupType: 'invoice',
   },
   {
-    title: 'Support Chatbot for a Local Business',
+    title: 'Small-Business Support Assistant',
     problem:
       'Customers repeatedly call or message asking about hours, pricing, booking policies, and service areas, pulling staff away from billable work.',
     solution:
-      'An embeddable web chatbot that answers questions strictly from the business’s approved documents and captures visitor contact details for follow-up.',
+      'An illustrative concept for a small-business support assistant that could answer common questions from approved business information.',
     howItWorks:
-      'Business FAQs and service docs are chunked into an open-source Chroma vector database. Relevant passages are retrieved per question and answered by a free-tier LLM.',
+      'Proposed workflow: prepare an approved FAQ source, retrieve relevant information for a visitor question, and present a suggested response. This is a concept illustration, not a claim of a deployed client chatbot.',
     tools: ['Retrieval Pipeline (RAG)', 'Chroma Vector DB', 'Free-tier LLM'],
     mockupType: 'chatbot',
   },
@@ -156,9 +151,9 @@ const PROJECTS: ProjectItem[] = [
     problem:
       'Checking competitor product pages every week by hand to track price changes and stock updates is tedious and easy to forget.',
     solution:
-      'A scheduled browser agent that visits target competitor URLs, extracts current prices and availability, compares them against last week, and emails a digest.',
+      'An illustrative concept for tracking publicly visible product prices and highlighting changes over time.',
     howItWorks:
-      'n8n triggers a Python + Playwright script on a weekly schedule, an LLM normalizes messy page pricing into clean JSON, and n8n sends a summary email.',
+      'Proposed workflow: collect sample product-page data, normalize price fields, compare snapshots, and prepare a change summary. This is a concept illustration, not a claim of a live monitoring service.',
     tools: ['Python', 'Playwright', 'Free-tier LLM', 'n8n'],
     mockupType: 'monitor',
   },
@@ -207,58 +202,19 @@ const TOOLS = [
 ];
 
 const WHY_ME = [
-  {
-    title: '16+ Years of Engineering & QA Discipline',
-    description:
-      'My background is in software quality engineering—testing complex systems so they do not break in production. Every AI workflow I ship includes edge-case checks and fallback handling.',
-  },
-  {
-    title: 'Fast 1–2 Week Delivery',
-    description:
-      'Focused, practical builds that go from discovery call to working system in days rather than months of agency overhead.',
-  },
-  {
-    title: 'Fixed Scope & Clear Pricing',
-    description:
-      'You know the exact deliverable and price upfront. No surprise hourly bills or open-ended retainers.',
-  },
-  {
-    title: 'You Own Everything I Build',
-    description:
-      'All source code, prompts, workflows, and documentation are handed over to your accounts upon completion.',
-  },
-  {
-    title: 'Free Post-Launch Check-In',
-    description:
-      'Every project includes a complimentary follow-up check-in after launch to review real usage and fine-tune prompts or rules.',
-  },
+  { title: 'Engineering-Led Thinking', description: 'The approach is informed by more than 16 years of broader software experience. AI development is a newer area of focus and is presented separately from that experience.' },
+  { title: 'Clear Scope Before Commitment', description: 'Requirements, assumptions, dependencies, deliverables and costs should be agreed in writing before any project commitment.' },
+  { title: 'Honest Project Representation', description: 'Portfolio examples are labelled as concept demonstrations. They are not presented as client engagements, endorsements or production deployments.' },
+  { title: 'Transparent Availability', description: 'Enquiries are reviewed subject to applicable professional commitments, permissions and actual availability. An enquiry is not a confirmation that work can be accepted.' },
 ];
 
 const FAQS = [
-  {
-    q: 'How does pricing and payment work?',
-    a: 'Every project is quoted at a fixed price after our free discovery call. Standard structure is 50% upfront to reserve your build slot and 50% upon final handover and demo approval.',
-  },
-  {
-    q: 'How long does a typical project take?',
-    a: 'Most single-workflow automations, document extractors, and custom chatbots take 1 to 2 weeks from kickoff to handover. Larger multi-step agents are broken into clear weekly milestones.',
-  },
-  {
-    q: 'How is my business data kept private and secure?',
-    a: 'Your data stays inside your own cloud accounts, spreadsheets, and databases. I never train public models on your documents, and when needed, we can run open-source models locally via Ollama so data never leaves your environment.',
-  },
-  {
-    q: 'What happens after launch if something needs adjusting?',
-    a: 'You receive full documentation showing how the system works and how to update content yourself, plus a free post-launch check-in. If you want new features later, we can scope them as a small follow-up.',
-  },
-  {
-    q: 'Which tools and AI models do you use?',
-    a: 'I select the most reliable, cost-effective stack for your use case—commonly Python, n8n, Playwright, LangChain, Chroma, and Google Sheets paired with Google Gemini, Groq, or open-source models so ongoing running costs stay minimal or free.',
-  },
-  {
-    q: 'How do we scope a project if I am not sure what is possible?',
-    a: 'You do not need a technical spec. On our discovery call, just show me the repetitive task or manual process taking up your team’s time, and I will propose the simplest, highest-ROI way to automate it.',
-  },
+  { q: 'Are you currently available to accept projects?', a: 'Availability is considered case by case and is subject to applicable professional commitments, permissions and scheduling. Sending an enquiry does not confirm that a project can be accepted.' },
+  { q: 'How does pricing work?', a: 'The prices shown are indicative starting points in USD and INR, not final quotations. Any potential engagement would require an agreed scope, deliverables, dependencies, timeline and payment terms before work begins.' },
+  { q: 'Are the projects shown completed client projects?', a: 'No. The three examples on this page are explicitly labelled personal concept demonstrations. They are illustrative use cases, not client engagements, endorsements or claims of production deployment.' },
+  { q: 'How is project data handled?', a: 'Data handling, access, retention, third-party services and security requirements must be discussed and agreed before any work begins. Do not send confidential or sensitive information through the initial enquiry form.' },
+  { q: 'Which tools and AI models are represented here?', a: 'The technology list describes tools explored for learning and concept work. The actual technology selection for any future project would depend on feasibility, requirements and available access.' },
+  { q: 'How do I make an enquiry?', a: 'Use the contact form to prepare an email draft or write directly to subhajitpal86@gmail.com. An enquiry is an invitation to discuss fit, not a confirmation of availability or acceptance.' },
 ];
 
 export function App() {
@@ -274,7 +230,7 @@ export function App() {
   // Contact form state (opens pre-filled mailto link)
   const [contactName, setContactName] = useState('');
   const [contactEmail, setContactEmail] = useState('');
-  const [contactBudget, setContactBudget] = useState('$250 – $500');
+  const [contactBudget, setContactBudget] = useState('₹20,500 – ₹41,000 / $250 – $500');
   const [contactDesc, setContactDesc] = useState('');
 
   useEffect(() => {
@@ -306,10 +262,10 @@ export function App() {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(
-      `AI Automation Inquiry from ${contactName || 'Website Visitor'} (${contactBudget})`
+      `Project enquiry from ${contactName || 'Website Visitor'} (${contactBudget})`
     );
     const body = encodeURIComponent(
-      `Name: ${contactName}\nEmail: ${contactEmail}\nEstimated Budget: ${contactBudget}\n\nProject Details:\n${contactDesc}`
+      `Name: ${contactName}\nEmail: ${contactEmail}\nIndicative Budget: ${contactBudget}\n\nProject Details:\n${contactDesc}\n\nNote: This is an initial enquiry only; availability and any engagement are subject to applicable commitments and separately agreed terms.`
     );
     window.location.href = `mailto:subhajitpal86@gmail.com?subject=${subject}&body=${body}`;
   };
@@ -331,7 +287,7 @@ export function App() {
             <span className="w-8 h-8 rounded-lg bg-teal-600 dark:bg-teal-500 text-white dark:text-slate-950 flex items-center justify-center font-bold text-sm">
               S
             </span>
-            <span>Subhajit</span>
+            <span>AI Solutions</span>
           </a>
 
           {/* Desktop Nav */}
@@ -361,9 +317,7 @@ export function App() {
             </button>
 
             <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
             >
               Book a Call
@@ -426,21 +380,19 @@ export function App() {
             </p>
 
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-              AI Chatbots, Agents &amp; Automations That Save Your Team Hours Every Week
+              Practical AI, Automation &amp; Web Solutions for Real-World Problems
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-              Custom-built, delivered in 1-2 weeks, and designed to keep working after launch.
+              Explore practical solution ideas through clearly labelled concept demonstrations. Any potential engagement is subject to availability and agreed scope.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-base font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
               >
-                Book a Free Discovery Call
+                Send an Enquiry
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -453,7 +405,7 @@ export function App() {
             </div>
 
             <p className="mt-6 text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
-              Remote-first &nbsp;|&nbsp; Fixed-scope projects &nbsp;|&nbsp; 1-2 week delivery &nbsp;|&nbsp; You own the code
+              Kolkata, India &nbsp;|&nbsp; Remote enquiries &nbsp;|&nbsp; Scope and availability confirmed before commitment
             </p>
           </div>
         </section>
@@ -464,16 +416,14 @@ export function App() {
             <div className="flex items-start sm:items-center gap-3">
               <Sparkles className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5 sm:mt-0" />
               <p className="text-sm sm:text-base font-medium text-slate-800 dark:text-slate-100">
-                Now taking on my first clients: early-client pricing available for a limited number of projects.
+                Independent project enquiries are welcome. Any potential engagement is subject to applicable professional commitments, permissions, availability and a separately agreed scope.
               </p>
             </div>
             <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="text-sm font-semibold text-teal-700 dark:text-teal-400 hover:underline shrink-0"
             >
-              Claim a slot →
+              Read enquiry details →
             </a>
           </div>
         </section>
@@ -483,7 +433,7 @@ export function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-4">
               <h2 className="text-sm font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                About Subhajit
+                Approach
               </h2>
               <p className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
                 Built for reliability, not hype.
@@ -495,18 +445,13 @@ export function App() {
             </div>
             <div className="lg:col-span-8 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
               <p className="font-medium text-slate-900 dark:text-slate-100">
-                I build practical AI systems that save small businesses and startups time and money: custom chatbots,
-                intelligent agents, and automated workflows, delivered in 1-2 weeks.
+                The portfolio focuses on practical AI, automation and web-solution concepts for individuals, professionals and organizations.
               </p>
               <p>
-                I have 16+ years of experience in software quality engineering, where my job was making sure complex
-                systems work reliably. I bring that same discipline to AI: every chatbot, agent, and workflow I build is
-                tested, documented, and designed to keep working after launch. I focus on practical automation that
-                removes repetitive work for small teams, without the enterprise price tag.
+                The approach is informed by more than 16 years of broader software experience. AI development is a newer area of focus, and the examples on this site are presented as personal concept demonstrations rather than client delivery claims.
               </p>
               <p className="text-sm text-slate-500 dark:text-slate-400 border-l-2 border-teal-500 pl-4">
-                “I’ve seen how much time teams lose to repetitive manual work. Modern AI finally makes it affordable for
-                small businesses to automate it, and I enjoy building the systems that do.”
+                “Clear expectations matter: a concept is labelled as a concept, and any future engagement is discussed only when scope, availability and applicable commitments allow.”
               </p>
             </div>
           </div>
@@ -597,7 +542,7 @@ export function App() {
               Selected Work
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              Working reference architectures showing how common business bottlenecks are automated.
+              Self-directed concept demonstrations created to explore possible solutions. These are not client projects or claims of production-ready implementations.
             </p>
           </div>
 
@@ -612,10 +557,10 @@ export function App() {
                   <div className="h-44 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 p-4 flex flex-col justify-between relative">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-400 border border-teal-500/20">
-                        Sample Project
+                        Concept Demonstration
                       </span>
                       <span className="text-[11px] text-slate-400 flex items-center gap-1">
-                        <Play className="w-3 h-3" /> Demo Preview Placeholder
+                        <Play className="w-3 h-3" /> Illustrative UI • Synthetic sample data
                       </span>
                     </div>
 
@@ -667,10 +612,10 @@ export function App() {
                       <strong className="text-slate-800 dark:text-slate-100">Problem:</strong> {project.problem}
                     </p>
                     <p className="text-sm text-slate-600 dark:text-slate-300">
-                      <strong className="text-slate-800 dark:text-slate-100">What I built:</strong> {project.solution}
+                      <strong className="text-slate-800 dark:text-slate-100">Concept:</strong> {project.solution}
                     </p>
                     <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                      <strong className="text-slate-700 dark:text-slate-300">How it works:</strong> {project.howItWorks}
+                      <strong className="text-slate-700 dark:text-slate-300">Illustrative workflow:</strong> {project.howItWorks}
                     </p>
                   </div>
                 </div>
@@ -701,7 +646,7 @@ export function App() {
                 Try a Sample Business Support Bot
               </h2>
               <p className="mt-2 text-slate-600 dark:text-slate-300">
-                Click any common customer question below to see how a custom-trained assistant responds and captures leads.
+                Choose a sample question to preview a scripted response. This interface is illustrative only; it is not connected to an AI model, business knowledge base or lead-capture system.
               </p>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -770,11 +715,9 @@ export function App() {
               </div>
 
               <div className="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                <span>Grounded in business FAQs • Captures lead contact info</span>
+                <span>Scripted sample response • No lead data collected</span>
                 <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="font-semibold text-teal-600 dark:text-teal-400 hover:underline"
                 >
                   Want this on your site? →
@@ -788,10 +731,10 @@ export function App() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              Tools I Work With
+              Tools &amp; Technologies Explored
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              Proven open-source libraries, automation engines, and cost-efficient AI APIs.
+              A selection of technologies explored in learning and concept work. Actual project stacks would be selected only after requirements and feasibility review.
             </p>
           </div>
 
@@ -880,21 +823,8 @@ export function App() {
                 Have a repetitive process eating your team’s time? Let’s automate it.
               </h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                Book a free 20-minute discovery call to discuss your workflow, or send a quick note with what you are
-                looking to build.
+                For general enquiries, use the form to prepare an email draft or contact me directly. An enquiry does not confirm availability or acceptance of work; any potential engagement is subject to applicable commitments and agreed terms.
               </p>
-
-              <div className="pt-2">
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
-                >
-                  Book a Free Discovery Call
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
 
               <div className="pt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
                 <p className="flex items-center gap-2">
@@ -918,8 +848,9 @@ export function App() {
               className="lg:col-span-6 space-y-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/80 p-6"
             >
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                Or Send Project Details by Email
+                Prepare an Email Enquiry
               </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">This form opens your email application with a pre-filled draft. It does not submit or store information on this website.</p>
 
               <div>
                 <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
@@ -961,10 +892,10 @@ export function App() {
                   onChange={(e) => setContactBudget(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-teal-500"
                 >
-                  <option value="$150 – $250">$150 – $250 (Workflow / Extractor)</option>
-                  <option value="$250 – $500">$250 – $500 (Chatbot / Knowledge Base)</option>
-                  <option value="$400 – $1,000+">$400 – $1,000+ (Custom AI Agent / Multi-step)</option>
-                  <option value="Not sure yet">Not sure yet — let’s scope it</option>
+                  <option value="₹12,500 – ₹20,500 / $150 – $250">₹12,500 – ₹20,500 / $150 – $250 (Workflow / Document processing)</option>
+                  <option value="₹20,500 – ₹33,000 / $250 – $400">₹20,500 – ₹33,000 / $250 – $400 (Chatbot / AI agent)</option>
+                  <option value="₹33,000+ / $400+">₹33,000+ / $400+ (Larger custom solution)</option>
+                  <option value="Not sure yet">Not sure yet — discuss the requirement</option>
                 </select>
               </div>
 
@@ -988,7 +919,7 @@ export function App() {
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white transition-colors"
               >
                 <Send className="w-4 h-4" />
-                Open Pre-Filled Email
+                Prepare Email Draft
               </button>
             </form>
           </div>
@@ -1012,7 +943,7 @@ export function App() {
             </span>
           </div>
 
-          <p>© {currentYear} Subhajit. All rights reserved.</p>
+          <p>© {currentYear} Independent AI &amp; Automation Portfolio. All rights reserved.</p>
         </div>
       </footer>
     </div>
