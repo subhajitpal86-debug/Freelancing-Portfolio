@@ -372,7 +372,7 @@ export function App() {
         </section>
 
         {/* 3. APPOINTMENT AVAILABILITY */}
-        <section aria-label="Early client availability" className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-16">
+        <section aria-label="Appointment availability" className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-16">
           <div className="rounded-xl border border-teal-500/30 bg-teal-500/10 dark:bg-teal-500/[0.08] px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-start sm:items-center gap-3">
               <Sparkles className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5 sm:mt-0" />
@@ -425,7 +425,7 @@ export function App() {
               Services
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              The service areas below describe possible project directions for individuals, students, working professionals, startups and businesses. Feasibility, technical approach, timeline, availability and deliverables are assessed individually before any commitment.
+              The service areas below describe possible project directions for individuals, students, working professionals, retired individuals, startups and businesses. Feasibility, technical approach, timeline, availability and deliverables are assessed individually before any commitment.
             </p>
           </div>
 
@@ -635,7 +635,7 @@ export function App() {
           <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/70 p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-6 space-y-5">
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
-                Have a repetitive process eating your team’s time? Let’s automate it.
+                Have a task or process you would like to simplify? Let’s explore a practical solution.
               </h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 Appointment slots are available on Saturdays and Sundays, 9:00 AM–7:00 PM India Standard Time. Use the calendar to choose a slot, or send an email enquiry first. A meeting is an initial discussion, not confirmation that a project will be accepted.
@@ -693,7 +693,7 @@ export function App() {
 
               <div>
                 <label htmlFor="contact-email" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
-                  Work Email
+                  Your Email
                 </label>
                 <input
                   id="contact-email"
