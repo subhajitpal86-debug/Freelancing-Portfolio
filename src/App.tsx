@@ -86,6 +86,15 @@ const SERVICES: ServiceItem[] = [
     icon: <Workflow className="w-5 h-5" />,
   },
   {
+    title: 'Website & Web Application Concepts',
+    forWho: 'Individuals, students, professionals, startups, and businesses',
+    deliverable:
+      'Responsive portfolio sites, landing pages, business websites, and focused web application concepts, scoped around the intended audience and functionality.',
+    delivery: 'Timeline confirmed after scope review',
+    price: 'Custom quote',
+    icon: <Code2 className="w-5 h-5" />,
+  },
+  {
     title: 'Chat With Your Docs (Knowledge Base)',
     forWho: 'Individuals and organizations managing reference documents',
     deliverable:
@@ -464,7 +473,7 @@ export function App() {
               Services
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              The service areas below describe possible project directions. Feasibility, technical approach, timeline, availability and deliverables are assessed individually before any commitment.
+              The service areas below describe possible project directions for individuals, students, working professionals, startups and businesses. Feasibility, technical approach, timeline, availability and deliverables are assessed individually before any commitment.
             </p>
           </div>
 
@@ -620,7 +629,9 @@ export function App() {
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-2 flex flex-wrap gap-2">
+                <div className="px-6 pb-6 pt-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Illustrative technology options (not a claim of implementation)</p>
+                  <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
@@ -629,6 +640,7 @@ export function App() {
                       {tool}
                     </span>
                   ))}
+                  </div>
                 </div>
               </article>
             ))}
@@ -755,7 +767,7 @@ export function App() {
         <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              Why Work With Me
+              What to Expect
             </h2>
           </div>
 
