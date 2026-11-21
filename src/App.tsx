@@ -71,7 +71,7 @@ const SERVICES: ServiceItem[] = [
     title: 'Workflow Automation',
     forWho: 'Individuals and small teams handling repetitive digital tasks',
     deliverable:
-      'Connect email, Google Sheets, CRM, and Slack with an AI decision layer in the middle to classify, draft, route, and update records automatically.',
+      'A proposed workflow could connect selected email, spreadsheet, CRM, or messaging tools to classify requests, prepare drafts, route tasks, and update records after the integrations and safeguards are scoped.',
     delivery: 'Timeline confirmed after scope review',
     price: '$150 / ₹12,500 starting',
     icon: <Workflow className="w-5 h-5" />,
@@ -89,7 +89,7 @@ const SERVICES: ServiceItem[] = [
     title: 'Chat With Your Docs (Knowledge Base)',
     forWho: 'Individuals and organizations managing reference documents',
     deliverable:
-      'A private search-and-answer assistant over your SOPs, manuals, and internal docs with source citations so answers stay grounded in your data.',
+      'A scoped knowledge assistant can be designed to search approved SOPs, manuals, and internal documents, with source references and access controls defined for the use case.',
     delivery: 'Timeline confirmed after scope review',
     price: '$300 / ₹25,000 starting',
     icon: <BookOpen className="w-5 h-5" />,
@@ -178,21 +178,27 @@ const WHY_ME = [
 const FAQS = [
   { q: 'Are you currently available to accept projects?', a: 'Availability is considered case by case and is subject to applicable professional commitments, permissions and scheduling. Sending an enquiry does not confirm that a project can be accepted.' },
   { q: 'How does pricing work?', a: 'The prices shown are indicative starting points in USD and INR, not final quotations. Any potential engagement would require an agreed scope, deliverables, dependencies, timeline and payment terms before work begins.' },
-  { q: 'Are the projects shown completed client projects?', a: 'No. The three examples on this page are explicitly labelled personal concept demonstrations. They are illustrative use cases, not client engagements, endorsements or claims of production deployment.' },
+  { q: 'Are the examples shown completed client projects?', a: 'No. The three examples are illustrative solution scenarios. They are not client engagements, endorsements, completed implementations or deployed products.' },
   { q: 'How is project data handled?', a: 'Data handling, access, retention, third-party services and security requirements must be discussed and agreed before any work begins. Do not send confidential or sensitive information through the initial enquiry form.' },
   { q: 'Which tools and AI models are represented here?', a: 'The technology list describes tools explored for learning and concept work. The actual technology selection for any future project would depend on feasibility, requirements and available access.' },
   { q: 'How do I make an enquiry?', a: 'Use the contact form to prepare an email draft or write directly to subhajitpal86@gmail.com. An enquiry is an invitation to discuss fit, not a confirmation of availability or acceptance.' },
 ];
 
 export function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      return localStorage.getItem('subhajit-theme') !== 'light';
+    } catch {
+      return true;
+    }
+  });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   // Contact form state (opens pre-filled mailto link)
   const [contactName, setContactName] = useState('');
   const [contactEmail, setContactEmail] = useState('');
-  const [contactBudget, setContactBudget] = useState('₹20,500 – ₹41,000 / $250 – $500');
+  const [contactBudget, setContactBudget] = useState('Not sure yet');
   const [contactDesc, setContactDesc] = useState('');
 
   useEffect(() => {
@@ -201,6 +207,11 @@ export function App() {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
+    }
+    try {
+      localStorage.setItem('subhajit-theme', darkMode ? 'dark' : 'light');
+    } catch {
+      // Theme switching still works for this session when storage is unavailable.
     }
   }, [darkMode]);
 
@@ -241,7 +252,7 @@ export function App() {
               Services
             </a>
             <a href="#work" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
-              Work
+              Examples
             </a>
             <a href="#process" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
               Process
@@ -297,7 +308,7 @@ export function App() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
             >
-              Work
+              Examples
             </a>
             <a
               href="#process"
@@ -350,7 +361,7 @@ export function App() {
                 href="#work"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-base font-semibold border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
               >
-                See My Work
+                See Examples
               </a>
             </div>
 
@@ -360,7 +371,7 @@ export function App() {
           </div>
         </section>
 
-        {/* 3. EARLY-CLIENT OFFER BANNER */}
+        {/* 3. APPOINTMENT AVAILABILITY */}
         <section aria-label="Early client availability" className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-16">
           <div className="rounded-xl border border-teal-500/30 bg-teal-500/10 dark:bg-teal-500/[0.08] px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-start sm:items-center gap-3">
@@ -485,11 +496,11 @@ export function App() {
           </div>
         </section>
 
-        {/* 6. SELECTED WORK */}
+        {/* 6. EXAMPLE SOLUTION SCENARIOS */}
         <section id="work" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              Concept Examples
+              Example Solution Scenarios
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
               These are illustrative scenarios, not completed client projects or deployed products. They show the type of problem a proposed solution could address.
@@ -524,7 +535,7 @@ export function App() {
                   </p>
                 </div>
                 <p className="mt-auto pt-5 text-xs text-slate-500 dark:text-slate-400">
-                  Concept only • No client deployment or working product is being claimed
+                  Illustrative scenario • Not a deployed client solution
                 </p>
               </article>
             ))}
@@ -555,7 +566,7 @@ export function App() {
           </div>
         </section>
 
-        {/* 9. WHY WORK WITH ME */}
+        {/* 9. WHAT TO EXPECT */}
         <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
