@@ -46,7 +46,7 @@ const SERVICES: ServiceItem[] = [
     deliverable:
       'A website or messaging assistant configured around approved FAQs, services, and policies. Optional enquiry routing can be scoped where appropriate.',
     delivery: 'Timeline confirmed after scope review',
-    price: '$250 / ₹20,500 starting',
+    price: '₹4,999 / $69 starting',
     icon: <Bot className="w-5 h-5" />,
   },
   {
@@ -55,7 +55,7 @@ const SERVICES: ServiceItem[] = [
     deliverable:
       'A workflow concept for extracting selected fields from invoices, forms, resumes, or contracts and preparing structured records for review and export.',
     delivery: 'Timeline confirmed after scope review',
-    price: '$200 / ₹16,500 starting',
+    price: '₹3,999 / $49 starting',
     icon: <FileText className="w-5 h-5" />,
   },
   {
@@ -64,7 +64,7 @@ const SERVICES: ServiceItem[] = [
     deliverable:
       'Task-focused agents can be scoped to gather information, apply defined checks, and assist with repeatable browser or API-based workflows, with human review where needed.',
     delivery: 'Timeline confirmed after scope review',
-    price: '$400 / ₹33,000 starting',
+    price: '₹7,999 / $99 starting',
     icon: <Cpu className="w-5 h-5" />,
   },
   {
@@ -73,7 +73,7 @@ const SERVICES: ServiceItem[] = [
     deliverable:
       'A proposed workflow could connect selected email, spreadsheet, CRM, or messaging tools to classify requests, prepare drafts, route tasks, and update records after the integrations and safeguards are scoped.',
     delivery: 'Timeline confirmed after scope review',
-    price: '$150 / ₹12,500 starting',
+    price: '₹2,999 / $39 starting',
     icon: <Workflow className="w-5 h-5" />,
   },
   {
@@ -82,7 +82,7 @@ const SERVICES: ServiceItem[] = [
     deliverable:
       'Responsive portfolio sites, landing pages, business websites, and focused web application concepts, scoped around the intended audience and functionality.',
     delivery: 'Timeline confirmed after scope review',
-    price: 'Custom quote',
+    price: '₹3,999 / $49 (one page) • ₹7,999 / $99 (up to 5 pages)',
     icon: <Code2 className="w-5 h-5" />,
   },
   {
@@ -91,7 +91,7 @@ const SERVICES: ServiceItem[] = [
     deliverable:
       'A scoped knowledge assistant can be designed to search approved SOPs, manuals, and internal documents, with source references and access controls defined for the use case.',
     delivery: 'Timeline confirmed after scope review',
-    price: '$300 / ₹25,000 starting',
+    price: '₹5,999 / $79 starting',
     icon: <BookOpen className="w-5 h-5" />,
   },
 ];
@@ -177,7 +177,7 @@ const WHY_ME = [
 
 const FAQS = [
   { q: 'Are you currently available to accept projects?', a: 'Availability is considered case by case and is subject to applicable professional commitments, permissions and scheduling. Sending an enquiry does not confirm that a project can be accepted.' },
-  { q: 'How does pricing work?', a: 'The prices shown are indicative starting points in USD and INR, not final quotations. Any potential engagement would require an agreed scope, deliverables, dependencies, timeline and payment terms before work begins.' },
+  { q: 'What is the Founding Client Programme?', a: 'Introductory prices are available for the first three accepted projects. They apply to small, clearly defined scopes. Two reasonable revision rounds are included; scope changes and additional features are quoted separately. Domain, hosting, paid APIs, subscriptions and other third-party charges are excluded unless explicitly agreed. A 30–50% advance and milestone or handover payment schedule will be agreed in writing.' },
   { q: 'Are the examples shown completed client projects?', a: 'No. The three examples are illustrative solution scenarios. They are not client engagements, endorsements, completed implementations or deployed products.' },
   { q: 'How is project data handled?', a: 'Data handling, access, retention, third-party services and security requirements must be discussed and agreed before any work begins. Do not send confidential or sensitive information through the initial enquiry form.' },
   { q: 'Which tools and AI models are represented here?', a: 'The technology list describes tools explored for learning and concept work. The actual technology selection for any future project would depend on feasibility, requirements and available access.' },
@@ -425,7 +425,7 @@ export function App() {
               Services
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              The service areas below describe possible project directions for individuals, students, working professionals, retired individuals, startups and businesses. Feasibility, technical approach, timeline, availability and deliverables are assessed individually before any commitment.
+              Practical, carefully scoped services for individuals, students, working professionals, retired individuals, startups and businesses. Introductory prices are designed for small, clearly defined first projects. Feasibility, timeline, availability and deliverables are confirmed before any commitment.
             </p>
           </div>
 
@@ -461,7 +461,7 @@ export function App() {
           </div>
 
           <p className="mt-8 text-sm text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-lg px-4 py-3">
-            Prices are indicative starting points, not quotations. A discussion is exploratory; any work, fee, timeline and handover terms must be agreed in writing before it begins.
+            <strong>Founding Client Programme — introductory rates for the first three accepted projects.</strong> Prices are starting points for small, clearly defined scopes, not unlimited builds. The final quote depends on requirements and feasibility. Two reasonable revision rounds are included; additional features or scope changes are quoted separately. Domain, hosting, paid APIs, subscriptions and other third-party charges are excluded unless explicitly stated. A 30–50% advance and milestone or handover payment schedule will be agreed in writing before work begins.
           </p>
         </section>
 
@@ -716,9 +716,10 @@ export function App() {
                   onChange={(e) => setContactBudget(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-teal-500"
                 >
-                  <option value="₹12,500 – ₹20,500 / $150 – $250">₹12,500 – ₹20,500 / $150 – $250 (Workflow / Document processing)</option>
-                  <option value="₹20,500 – ₹33,000 / $250 – $400">₹20,500 – ₹33,000 / $250 – $400 (Chatbot / AI agent)</option>
-                  <option value="₹33,000+ / $400+">₹33,000+ / $400+ (Larger custom solution)</option>
+                  <option value="₹2,999 – ₹3,999 / $39 – $49">₹2,999 – ₹3,999 / $39 – $49 (Workflow / Document processing)</option>
+                  <option value="₹4,999 – ₹5,999 / $69 – $79">₹4,999 – ₹5,999 / $69 – $79 (Chatbot / Knowledge assistant)</option>
+                  <option value="₹7,999+ / $99+">₹7,999+ / $99+ (AI agent / larger custom solution)</option>
+                  <option value="₹3,999 – ₹7,999 / $49 – $99">₹3,999 – ₹7,999 / $49 – $99 (Website development)</option>
                   <option value="Not sure yet">Not sure yet — discuss the requirement</option>
                 </select>
               </div>
