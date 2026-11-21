@@ -24,6 +24,8 @@ import {
   ExternalLink,
 } from 'lucide-react';
 
+const BOOKING_URL = 'https://calendar.app.google/SvUD2YihdMirAzrY7';
+
 interface ServiceItem {
   title: string;
   forWho: string;
@@ -326,10 +328,13 @@ export function App() {
             </button>
 
             <a
-              href="#contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
             >
-              Contact
+              Schedule a Discussion
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
 
             <button
@@ -398,11 +403,13 @@ export function App() {
 
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
-                href="#contact"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-base font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
               >
-                Send an Enquiry
-                <ArrowRight className="w-4 h-4" />
+                Book an Appointment
+                <ExternalLink className="w-4 h-4" />
               </a>
 
               <a
@@ -835,8 +842,17 @@ export function App() {
                 Have a repetitive process eating your team’s time? Let’s automate it.
               </h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                For general enquiries, use the form to prepare an email draft or contact me directly. An enquiry does not confirm availability or acceptance of work; any potential engagement is subject to applicable commitments and agreed terms.
+                Choose a convenient slot using the appointment calendar, or use the email enquiry form if you prefer to share project details first. A booking is an initial discussion and does not confirm acceptance of work; any potential engagement remains subject to applicable commitments and agreed terms.
               </p>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
+              >
+                Schedule an Appointment
+                <ExternalLink className="w-4 h-4" />
+              </a>
 
               <div className="pt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
                 <p className="flex items-center gap-2">
