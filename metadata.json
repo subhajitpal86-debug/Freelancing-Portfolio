@@ -1,6 +1,6 @@
 {
-  "name": "Subhajit — AI Solutions Builder",
-  "description": "Freelance AI developer and automation consultant building custom chatbots, AI agents, and workflow automations for small businesses and startups in 1–2 weeks.",
+  "name": "Practical AI Solutions Portfolio",
+  "description": "A portfolio presenting illustrative scenarios for AI, automation and web solutions. Appointment discussions are available Saturdays and Sundays, 9 AM to 7 PM IST; project enquiries are subject to scope, permissions and availability.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
