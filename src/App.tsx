@@ -320,7 +320,7 @@ export function App() {
               href="#contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 transition-colors shadow-sm"
             >
-              Book a Call
+              Contact
             </a>
 
             <button
@@ -376,7 +376,7 @@ export function App() {
             <p className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-teal-700 dark:text-teal-400 bg-teal-500/10 border border-teal-500/20 px-3 py-1 rounded-full mb-6">
               <span>AI Solutions Builder</span>
               <span aria-hidden="true">•</span>
-              <span>Chatbots, AI Agents &amp; Workflow Automation</span>
+              <span>AI, Automation &amp; Web Concepts</span>
             </p>
 
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
@@ -445,10 +445,10 @@ export function App() {
             </div>
             <div className="lg:col-span-8 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
               <p className="font-medium text-slate-900 dark:text-slate-100">
-                The portfolio focuses on practical AI, automation and web-solution concepts for individuals, professionals and organizations.
+                This portfolio presents selected areas of interest and illustrative concepts for individuals, professionals and organizations. It does not imply an established freelance practice or unrestricted availability.
               </p>
               <p>
-                The approach is informed by more than 16 years of broader software experience. AI development is a newer area of focus, and the examples on this site are presented as personal concept demonstrations rather than client delivery claims.
+                The approach draws on more than 16 years of overall software experience. AI development is a newer area of focus; the examples shown are personal concept demonstrations, not client delivery claims.
               </p>
               <p className="text-sm text-slate-500 dark:text-slate-400 border-l-2 border-teal-500 pl-4">
                 “Clear expectations matter: a concept is labelled as a concept, and any future engagement is discussed only when scope, availability and applicable commitments allow.”
@@ -464,7 +464,7 @@ export function App() {
               Services
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              Practical, fixed-scope AI systems tailored to your business workflows.
+              The service areas below describe possible project directions. Feasibility, technical approach, timeline, availability and deliverables are assessed individually before any commitment.
             </p>
           </div>
 
@@ -650,7 +650,7 @@ export function App() {
               </p>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Scripted front-end preview • No external API calls
+              Fictional sample business • Scripted preview • No AI API or lead capture
             </p>
           </div>
 
@@ -734,7 +734,7 @@ export function App() {
               Tools &amp; Technologies Explored
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              A selection of technologies explored in learning and concept work. Actual project stacks would be selected only after requirements and feasibility review.
+              A selection of technologies explored for learning and concept work. Listing a tool does not imply production experience or a commitment to use it on a project.
             </p>
           </div>
 
@@ -850,7 +850,7 @@ export function App() {
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                 Prepare an Email Enquiry
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">This form opens your email application with a pre-filled draft. It does not submit or store information on this website.</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">This form opens your email application with a pre-filled draft; it does not submit or store information on this website. Please do not include confidential or sensitive information in an initial enquiry.</p>
 
               <div>
                 <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
